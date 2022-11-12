@@ -4,7 +4,7 @@ import json
 import aiohttp
 import asyncio
 
-class Eruchi(commands.Bot):
+class NongBrahm(commands.Bot):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -23,7 +23,9 @@ loadup_cogs = [
     'owner'
 ]
 
-bot = Eruchi(
+intents = discord.Intents.all()
+bot = NongBrahm(
+    intents=intents,
     command_prefix='>>',
     owner_ids=[
         154433538375024640
@@ -32,14 +34,20 @@ bot = Eruchi(
 
 bot.remove_command('help')
 
-if __name__ == '__main__':
+
+async def main(client):
 
     for cog in loadup_cogs:
-        bot.load_extension(f"cogs.{cog}")
+        await client.load_extension(f"cogs.{cog}")
 
     with open('tokens.json', 'r') as f:
-        bot_info = json.loads(f.read())
+        client_info = json.loads(f.read())
 
-    bot.info = bot_info
+    client.info = client_info
 
-    bot.run(bot_info['token'])
+    await client.start(client_info['token'])
+
+
+if __name__ == '__main__':
+
+    asyncio.run(main(bot))
