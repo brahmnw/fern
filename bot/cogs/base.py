@@ -9,8 +9,8 @@ class Base(commands.Cog):
     @commands.command(aliases=['info','invite','support'])
     async def help(self, ctx):
         embed = discord.Embed(
-            title='(น้องบราห์ม) Nong Brahm',
-            description='hello i am brahms minion i can do a 540 jump off of the high diving board at ymca\n[Invite Nong Brahm!](https://discord.com/oauth2/authorize?client_id=992708824727293952&permissions=8&scope=bot)',
+            title='(น้องบราห์ม) nong brahm',
+            description='hey im nong brahm!\n[Invite Nong Brahm!](https://discord.com/oauth2/authorize?client_id=992708824727293952&permissions=8&scope=bot)',
             color=discord.Colour.from_rgb(255, 74, 119)
         ) \
             .set_thumbnail(url='https://i.imgur.com/bmmFpaf.jpg') \

@@ -38,7 +38,7 @@ class Events(commands.Cog):
 
         else:
 
-            print(f"[COMMAND EXCEPTION] {exception}")
+            print(f"[exception.cmd] {exception}")
 
             await ctx.send(
                 embed=discord.Embed(
