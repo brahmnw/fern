@@ -26,7 +26,7 @@ loadup_cogs = [
 intents = discord.Intents.all()
 bot = NongBrahm(
     intents=intents,
-    command_prefix='>>',
+    command_prefix='nb.',
     owner_ids=[
         154433538375024640
     ]
