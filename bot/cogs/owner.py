@@ -20,7 +20,7 @@ class Owner(commands.Cog):
     async def _load(self, ctx, module):
 
         try:
-            self.bot.load_extension(f"cogs.{module}")
+            await self.bot.load_extension(f"cogs.{module}")
         
         except Exception as e:
             print(e)
@@ -33,7 +33,7 @@ class Owner(commands.Cog):
     async def _reload(self, ctx, module):
 
         try:
-            self.bot.reload_extension(f"cogs.{module}")
+            await self.bot.reload_extension(f"cogs.{module}")
         
         except Exception as e:
             print(e)
@@ -46,7 +46,7 @@ class Owner(commands.Cog):
     async def _unload(self, ctx, module):
 
         try:
-            self.bot.unload_extension(f"cogs.{module}")
+            await self.bot.unload_extension(f"cogs.{module}")
         
         except Exception as e:
             print(e)
