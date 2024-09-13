@@ -21,7 +21,7 @@ class Base(commands.Cog):
 [Support Server](https://discord.gg/QN4KfD4zsc)
             """) \
             .add_field(name="Servers", value=f"{len(self.bot.guilds)}") \
-            .add_field(name="Credits", value="Made by Brahm#8516") \
+            .add_field(name="Credits", value="programming by brahm") \
             .set_footer(text=f'ID: {self.bot.user.id}')
         await ctx.send(embed=embed)
 

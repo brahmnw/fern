@@ -32,20 +32,23 @@ bot = NongBrahm(
     ]
 )
 
+# remove unnecessary commands
 bot.remove_command('help')
 
 
 async def main(client):
 
+    # load the startup cogs
     for cog in loadup_cogs:
         await client.load_extension(f"cogs.{cog}")
 
-    with open('tokens.json', 'r') as f:
+    # load discord bot info
+    with open('info.json', 'r') as f:
         client_info = json.loads(f.read())
 
     client.info = client_info
 
-    await client.start(client_info['token'])
+    await client.start(client_info['tokens']['discord'])
 
 
 if __name__ == '__main__':
