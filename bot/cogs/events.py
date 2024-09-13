@@ -9,13 +9,18 @@ class Events(commands.Cog):
         self.bot = bot
 
     @Cog.listener()
-    async def on_ready(self):  
+    async def on_ready(self):
+
+        """Handler for when initial setups are finished and bot commands are ready to be used."""
+
         print('Connected to Discord and ready.')
         print(f'Currently in {len(self.bot.guilds)} guilds.')
         await self.bot.change_presence(activity=discord.Game("whats good"))
         
     @Cog.listener()
     async def on_command_error(self, ctx, exception):
+
+        """Handler for when an exception during command processing."""
 
         ignore_errors = [
             commands.CommandNotFound,

@@ -6,8 +6,11 @@ class Base(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(aliases=['info','invite','support'])
+    @commands.command(aliases=['info','invite'])
     async def help(self, ctx):
+
+        """Returns bot information."""
+
         embed = discord.Embed(
             title='(น้องบราห์ม) nong brahm',
             description='hey im nong brahm!\n[invite me!](https://discord.com/oauth2/authorize?client_id=992708824727293952&permissions=8&scope=bot)\n[my discord!](https://discord.gg/QN4KfD4zsc)',
@@ -17,6 +20,7 @@ class Base(commands.Cog):
             .add_field(name="guilds", value=f"{len(self.bot.guilds)}") \
             .add_field(name="bot credits", value="brahm") \
             .set_footer(text=f'bot user id: {self.bot.user.id}')
+        
         await ctx.send(embed=embed)
 
 

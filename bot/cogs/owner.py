@@ -19,6 +19,8 @@ class Owner(commands.Cog):
     @_owner.command(aliases=['l'])
     async def _load(self, ctx, module):
 
+        """Loads a cog from bot.cogs"""
+
         try:
             await self.bot.load_extension(f"cogs.{module}")
         
@@ -31,6 +33,8 @@ class Owner(commands.Cog):
 
     @_owner.command(aliases=['rl'], hidden=True)
     async def _reload(self, ctx, module):
+
+        """Reloads a cog from bot.cogs"""
 
         try:
             await self.bot.reload_extension(f"cogs.{module}")
@@ -45,6 +49,8 @@ class Owner(commands.Cog):
     @_owner.command(aliases=['ul'], hidden=True)
     async def _unload(self, ctx, module):
 
+        """Unloads a cog from bot.cogs"""
+
         try:
             await self.bot.unload_extension(f"cogs.{module}")
         
@@ -57,17 +63,25 @@ class Owner(commands.Cog):
 
     @_owner.command(hidden=True)
     async def _presence(self, ctx, *, presence):
+
+        """Changes the currently playing discord game."""
+
         await self.bot.change_presence(activity=discord.Game(presence))
         await ctx.send(f"Successfully changed presence to `{presence}`!")
 
     @_owner.command(aliases=['ss'], hidden=True)
     async def _start_aiohttp(self, ctx):
+
+        """Begins a client session for aiohttp."""
+
         self.bot.session = aiohttp.ClientSession()
         await ctx.send(f"Started `aiohttp.ClientSession()`.")
 
     @_owner.command()
     async def list_servers(self, ctx):
         
+        """Returns a list of all servers that the bot is in"""
+
         servers = []
         for s in self.bot.guilds:
             servers.append(s.name)
