@@ -10,10 +10,16 @@ class NongBrahm(commands.Bot):
         super().__init__(*args, **kwargs)
 
     async def start(self, *args, **kwargs):
+
+        """base code to run prior to starting the bot. starts an aiohttp ClientSession() for interaction with webAPIs."""
+
         self.session = aiohttp.ClientSession()
         await super().start(*args, **kwargs)
 
     async def close(self, *args, **kwargs):
+
+        """base code to run when properly closing the bot. starts an aiohttp ClientSession() for interaction with webAPIs."""
+
         await self.session.close()
         await super().close()
 

@@ -69,14 +69,6 @@ class Owner(commands.Cog):
         await self.bot.change_presence(activity=discord.Game(presence))
         await ctx.send(f"Successfully changed presence to `{presence}`!")
 
-    @_owner.command(aliases=['ss'], hidden=True)
-    async def _start_aiohttp(self, ctx):
-
-        """Begins a client session for aiohttp."""
-
-        self.bot.session = aiohttp.ClientSession()
-        await ctx.send(f"Started `aiohttp.ClientSession()`.")
-
     @_owner.command()
     async def list_servers(self, ctx):
         
