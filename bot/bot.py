@@ -4,7 +4,7 @@ import json
 import aiohttp
 import asyncio
 
-class NongBrahm(commands.Bot):
+class Fern(commands.Bot):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -30,9 +30,9 @@ loadup_cogs = [
 ]
 
 intents = discord.Intents.all()
-bot = NongBrahm(
+bot = Fern(
     intents=intents,
-    command_prefix='nb.',
+    command_prefix='.-',
     owner_ids=[
         154433538375024640
     ]
