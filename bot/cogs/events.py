@@ -5,11 +5,11 @@ import traceback
 
 class Events(commands.Cog):
 
-    def __init__(self, bot):
+    def __init__(self, bot) -> None:
         self.bot = bot
 
     @Cog.listener()
-    async def on_ready(self):
+    async def on_ready(self) -> None:
 
         """Handler for when initial setups are finished and bot commands are ready to be used."""
 
@@ -18,7 +18,7 @@ class Events(commands.Cog):
         await self.bot.change_presence(activity=discord.Game("whats good"))
         
     @Cog.listener()
-    async def on_command_error(self, ctx, exception):
+    async def on_command_error(self, ctx, exception) -> None:
 
         """Handler for when an exception during command processing."""
 
@@ -53,5 +53,5 @@ class Events(commands.Cog):
             )
 
 
-async def setup(bot):
+async def setup(bot) -> None:
     await bot.add_cog(Events(bot))

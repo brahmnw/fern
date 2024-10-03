@@ -6,17 +6,17 @@ import asyncio
 
 class Fern(commands.Bot):
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
 
-    async def start(self, *args, **kwargs):
+    async def start(self, *args, **kwargs) -> None:
 
         """base code to run prior to starting the bot. starts an aiohttp ClientSession() for interaction with webAPIs."""
 
         self.session = aiohttp.ClientSession()
         await super().start(*args, **kwargs)
 
-    async def close(self, *args, **kwargs):
+    async def close(self, *args, **kwargs) -> None:
 
         """base code to run when properly closing the bot. starts an aiohttp ClientSession() for interaction with webAPIs."""
 
@@ -42,7 +42,7 @@ bot = Fern(
 bot.remove_command('help')
 
 
-async def main(client):
+async def main(client) -> None:
 
     # load the startup cogs
     for cog in loadup_cogs:
