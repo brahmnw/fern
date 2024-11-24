@@ -32,7 +32,7 @@ loadup_cogs = [
 intents = discord.Intents.all()
 bot = Fern(
     intents=intents,
-    command_prefix='.-',
+    command_prefix='-.',
     owner_ids=[
         154433538375024640
     ]

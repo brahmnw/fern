@@ -18,7 +18,7 @@ class Base(commands.Cog):
         ) \
             .set_thumbnail(url='https://i.imgur.com/CBOUxev.jpeg') \
             .add_field(name="guilds", value=f"{len(self.bot.guilds)}") \
-            .add_field(name="prefix", value=".-") \
+            .add_field(name="prefix", value="-.") \
             .add_field(name="bot credits", value="brahm") \
             .set_footer(text=f'bot user id: {self.bot.user.id}')
         
