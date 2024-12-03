@@ -72,13 +72,9 @@ class Owner(commands.Cog):
     @_owner.command()
     async def list_servers(self, ctx) -> None:
         
-        """Returns a list of all servers that the bot is in"""
-
-        servers = []
-        for s in self.bot.guilds:
-            servers.append(s.name)
-
-        await ctx.send('\n'.join(servers))
+        """Produces a list of all servers that the bot is in"""
+        name = lambda s: s.name
+        await ctx.send('\n'.join(map(name, self.bot.guilds)))
 
 async def setup(bot) -> None:
     await bot.add_cog(Owner(bot))
